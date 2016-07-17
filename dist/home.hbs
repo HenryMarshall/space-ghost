@@ -10,7 +10,9 @@
   <h2>Featured Projects</h2>
   <ul class="horizontal-image-wrapper">
     {{#foreach posts}}
-      <a href={{url}}>
+      {{! NOTE: This *requires* the convention of the announcement}}
+      {{! page having the same slug as the tag }}
+      <a href="tag{{url}}">
         <li>
           {{! If the image isn't defined it will be a broken link }}
           {{#if image}}
