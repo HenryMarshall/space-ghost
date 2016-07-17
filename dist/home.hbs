@@ -1,0 +1,47 @@
+<h1>Static Home</h1>
+
+{{! You cannot select with `slug` if it is a page }}
+{{! You *must* specify page:true explicitly }}
+{{#get "posts" filter="title:home1+page:true" limit="1"}}
+  {{#foreach posts}}
+    {{content}}
+  {{/foreach}}
+{{/get}}
+
+{{#get "posts" limit="4" filter="featured:true+page:true"}}
+  <h2>Featured Projects</h2>
+  <ul class="horizontal-image-wrapper">
+    {{#foreach posts}}
+      {{! NOTE: This *requires* the convention of the announcement}}
+      {{! page having the same slug as the tag }}
+      <a href="tag{{url}}">
+        <li>
+          {{#if image}}
+            <img src={{image}}/>
+          {{else}}
+            <div class="square-the-same-sized-as-the-image"></div>
+          {{/if}}
+          <h3>{{title}}</h3>
+        </li>
+      </a>
+    {{/foreach}}
+  </ul>
+{{/get}}
+
+{{#get "posts" filter="title:home2+page:true" limit="1"}}
+  {{#foreach posts}}
+    {{content}}
+  {{/foreach}}
+{{/get}}
+
+{{#get "posts" limit="4" filter="page:false"}}
+  <h2>The Latest News</h2>
+  <ul class="horizontal-image-wrapper">
+    {{#foreach posts}}
+      <li>
+        <h3>{{title}}</h3>
+        <p>{{excerpt words="40"}}</p>
+      </li>
+    {{/foreach}}
+  </ul>
+{{/get}}

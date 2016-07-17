@@ -27,18 +27,5 @@
     </section>
 
   </article>
-
-  <footer>
-    {{#foreach tags}}
-      <p>a tag: {{name}}</p>
-      {{#get "posts" include="tags"}}
-        {{#foreach posts}}
-          {{#has tag="supply-chain"}}
-            <p> {{title}} </p>
-          {{/has}}
-        {{/foreach}}
-      {{/get}}
-    {{/foreach}}
-  </footer>
 </main>
 {{/post}}
