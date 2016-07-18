@@ -1,47 +1,40 @@
-<h1>Static Home</h1>
+<h1>{{@blog.title}}</h1>
 
-{{! You cannot select with `slug` if it is a page }}
-{{! You *must* specify page:true explicitly }}
-{{#get "posts" filter="title:home1+page:true" limit="1"}}
-  {{#foreach posts}}
-    {{content}}
-  {{/foreach}}
-{{/get}}
-
-{{#get "posts" limit="4" filter="featured:true+page:true"}}
+{{#get "posts" filter="featured:true+page:true+tag:project-announcement"}}
   <h2>Featured Projects</h2>
-  <ul class="horizontal-image-wrapper">
+  <ul class="carousel">
     {{#foreach posts}}
-      {{! NOTE: This *requires* the convention of the announcement}}
-      {{! page having the same slug as the tag }}
-      <a href="tag{{url}}">
-        <li>
+      <li>
+        {{! NOTE: This *requires* the project-announcement page use a slug with
+        the same value as the project's tag. As of Ghost 0.8.0, you set the 
+        slug as "Post URL" in the Admin UI }}
+        <a href="tag/{{slug}}">
           {{#if image}}
             <img src={{image}}/>
           {{else}}
             <div class="square-the-same-sized-as-the-image"></div>
           {{/if}}
           <h3>{{title}}</h3>
-        </li>
-      </a>
-    {{/foreach}}
-  </ul>
-{{/get}}
-
-{{#get "posts" filter="title:home2+page:true" limit="1"}}
-  {{#foreach posts}}
-    {{content}}
-  {{/foreach}}
-{{/get}}
-
-{{#get "posts" limit="4" filter="page:false"}}
-  <h2>The Latest News</h2>
-  <ul class="horizontal-image-wrapper">
-    {{#foreach posts}}
-      <li>
-        <h3>{{title}}</h3>
-        <p>{{excerpt words="40"}}</p>
+        </a>
       </li>
     {{/foreach}}
   </ul>
 {{/get}}
+
+{{#get "posts" filter="tag:home+page:true"}}
+  {{#foreach posts}}
+    <h2>{{title}}</h2>
+    {{content}}
+  {{/foreach}}
+{{/get}}
+
+<h2>The Latest News</h2>
+<ul>
+  {{#posts}}
+    <li>
+      <h3>{{title}}</h3>
+      <p>{{excerpt words="40"}}</p>
+    </li>
+  {{/posts}}
+</ul>
+{{pagination}}
