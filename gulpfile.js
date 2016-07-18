@@ -12,7 +12,7 @@ var webpackConfig = require('./webpack.config.js')
 gulp.task('sass', function() {
   return gulp.src('src/sass/main.+(sass|scss)')
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(sass().on('error', sass.logError))
     .pipe(cssnano())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/assets/css/'))
