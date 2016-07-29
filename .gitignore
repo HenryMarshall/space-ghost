@@ -1,3 +1,7 @@
 node_modules/
 *.swp
 .directory
+
+# temporary block of compiled assets
+dist/assets/js/index*
+dist/assets/css/main*
