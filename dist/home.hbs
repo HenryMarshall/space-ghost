@@ -1,26 +1,7 @@
 {{!< default }}
 <h1>{{@blog.title}}</h1>
 
-{{#get "posts" filter="featured:true+page:true+tag:project-announcement"}}
-  <h2>Featured Projects</h2>
-  <ul class="carousel">
-    {{#foreach posts}}
-      <li>
-        {{! NOTE: This *requires* the project-announcement page use a slug with
-        the same value as the project's tag. As of Ghost 0.8.0, you set the 
-        slug as "Post URL" in the Admin UI }}
-        <a href="tag/{{slug}}">
-          {{#if image}}
-            <img src={{image}}/>
-          {{else}}
-            <div class="square-the-same-sized-as-the-image"></div>
-          {{/if}}
-          <h3>{{title}}</h3>
-        </a>
-      </li>
-    {{/foreach}}
-  </ul>
-{{/get}}
+{{> featured-projects}}
 
 {{#get "posts" filter="tag:home+page:true"}}
   {{#foreach posts}}
