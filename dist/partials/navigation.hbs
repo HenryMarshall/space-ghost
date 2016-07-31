@@ -1,8 +1,13 @@
 <header class="navigation" role="banner">
   <div class="navigation-wrapper">
-    <a href="javascript:void(0)" class="logo">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="Logo Image">
+    <a href="/" class="logo">
+      {{#if @blog.logo}}
+        <img src="{{@blog.logo}}" alt="{{@blog.title}}">
+      {{else}}
+        <h1>{{@blog.title}}</h1>
+      {{/if}}
     </a>
+
     <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     <nav role="navigation">
       <ul id="js-navigation-menu" class="navigation-menu show">
