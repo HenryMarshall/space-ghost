@@ -1,8 +1,11 @@
+.cards-wrapper {
+  @include outer-container;
+}
+
 .cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  @include outer-container;
 }
 
 .card {
