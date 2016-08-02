@@ -1,7 +1,3 @@
-.cards-wrapper {
-  @include outer-container;
-}
-
 .cards {
   display: flex;
   flex-wrap: wrap;

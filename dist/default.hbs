@@ -28,8 +28,10 @@
   {{!-- The blog navigation links --}}
   {{navigation}}
 
-  {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-  {{{body}}}
+  <div class="main-wrapper">
+    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+    {{{body}}}
+  </div>
 
   {{> footer}}
 
