@@ -9,17 +9,22 @@
 
 {{#get "posts" filter="tag:home+page:true"}}
   {{#foreach posts}}
-    <h2>{{title}}</h2>
-    {{content}}
+    <section class="home-section">
+      {{#if image}}
+        <img src="{{image}}" alt="{{title}} image">
+      {{/if}}
+      <div class="content">
+        <h2>{{title}}</h2>
+        {{content}}
+      </div>
+    </section>
   {{/foreach}}
 {{/get}}
 
 <h2>The Latest News</h2>
 <ul>
   {{#posts}}
-    <li>
-      {{> teaser}}
-    </li>
+    {{> teaser}}
   {{/posts}}
 </ul>
 
