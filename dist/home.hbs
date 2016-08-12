@@ -1,7 +1,6 @@
 {{!< default }}
 
-<div class="hero">
-  <img src="{{@blog.cover}}" alt="Cover Image">
+<div class="hero"{{#if @blog.cover}} style="background-image: url({{@blog.cover}})"{{/if}}>
   <h2>{{@blog.description}}</h2>
 </div>
 
