@@ -13,7 +13,7 @@
   {{#get "posts" filter="tag:home+page:true"}}
     {{#foreach posts}}
       <section class="home-section"{{#if image}} style="background: image-url({{image}})"{{/if}}>
-        <div>
+        <div class="content">
           <h2>{{title}}</h2>
           <p>{{content}}</p>
         </div>
