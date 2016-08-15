@@ -19,6 +19,8 @@
   {{!-- Styles'n'Scripts --}}
   <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}" />
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700|Open+Sans:400,700" as="style" onload="this.rel='stylesheet'">
+
 
   {{!-- Ghost outputs important style and meta data with this tag --}}
   {{ghost_head}}
@@ -28,18 +30,12 @@
   {{!-- The blog navigation links --}}
   {{navigation}}
 
-  <div class="site-wrapper">
-
-  {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-  {{{body}}}
-
-  {{!-- The tiny footer at the very bottom --}}
-  <footer class="site-footer clearfix">
-    <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-    <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
-  </footer>
-
+  <div class="main-wrapper">
+    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+    {{{body}}}
   </div>
+
+  {{> footer}}
 
   {{!-- If you want jQuery exposed as a global in `{{ghost_foot}}` be --}}
   {{!-- sure to include it here (from a CDN). --}}

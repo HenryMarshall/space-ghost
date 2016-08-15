@@ -1,0 +1,19 @@
+.home-section
+
+  > div
+    @include outer-container
+    padding: 40px 0
+
+  > .content
+    @include type-system-main
+    padding: 40px 20px
+
+    > h1
+      font-size: 40px
+
+  .btn
+    margin: 20px 0
+
+.home-section:nth-child(even)
+  background-color: $alternating-background
+  color: $alternating-foreground

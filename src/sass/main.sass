@@ -1,13 +1,16 @@
-// The folder structure assumes you're going to organize things "the sass way",
-// (see link) but the only requirement is that *only* files referenced by this
-// file (main.sass or main.scss) will we build in dist.
+// @import vendor/casper
+@import vendor/normalize
+@import vendor/bourbon/bourbon
+@import vendor/neat/neat
 
-// http://thesassway.com/beginner/how-to-structure-a-sass-project
+@import base/base
 
+@import modules/navigation
+@import modules/footer
+@import modules/featured_projects
+@import modules/line_behind_text
+@import modules/hero
+@import modules/teaser
+@import modules/home_section
 
-// Modules and Variable
-
-// Partials
-
-// Third-party
-@import vendor/casper
+@import layout/default

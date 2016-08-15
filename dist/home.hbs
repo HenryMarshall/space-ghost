@@ -1,47 +1,38 @@
-<h1>Static Home</h1>
+{{!< default }}
 
-{{! You cannot select with `slug` if it is a page }}
-{{! You *must* specify page:true explicitly }}
-{{#get "posts" filter="title:home1+page:true" limit="1"}}
-  {{#foreach posts}}
-    {{content}}
-  {{/foreach}}
-{{/get}}
+<div class="hero"{{#if @blog.cover}} style="background-image: url({{@blog.cover}})"{{/if}}>
+  <h2>{{@blog.description}}</h2>
+</div>
 
-{{#get "posts" limit="4" filter="featured:true+page:true"}}
-  <h2>Featured Projects</h2>
-  <ul class="horizontal-image-wrapper">
+<main>
+
+  <section class="home-section">
+    {{> featured-projects}}
+  </section>
+
+  {{#get "posts" filter="tag:home+page:true"}}
     {{#foreach posts}}
-      {{! NOTE: This *requires* the convention of the announcement}}
-      {{! page having the same slug as the tag }}
-      <a href="tag{{url}}">
+      <section class="home-section"{{#if image}} style="background: image-url({{image}})"{{/if}}>
+        <div class="content">
+          <h2>{{title}}</h2>
+          <p>{{content}}</p>
+        </div>
+      </section>
+    {{/foreach}}
+  {{/get}}
+
+  <section class="home-section">
+    <div class="content">
+      <h2>The Latest News</h2>
+
+      {{#posts}}
         <li>
-          {{#if image}}
-            <img src={{image}}/>
-          {{else}}
-            <div class="square-the-same-sized-as-the-image"></div>
-          {{/if}}
-          <h3>{{title}}</h3>
+          <a href="{{url}}">{{title}}</a>
         </li>
-      </a>
-    {{/foreach}}
-  </ul>
-{{/get}}
+      {{/posts}}
 
-{{#get "posts" filter="title:home2+page:true" limit="1"}}
-  {{#foreach posts}}
-    {{content}}
-  {{/foreach}}
-{{/get}}
+      <a href="/page/2" class="btn">See More</a>
+    </div>
+  </section>
 
-{{#get "posts" limit="4" filter="page:false"}}
-  <h2>The Latest News</h2>
-  <ul class="horizontal-image-wrapper">
-    {{#foreach posts}}
-      <li>
-        <h3>{{title}}</h3>
-        <p>{{excerpt words="40"}}</p>
-      </li>
-    {{/foreach}}
-  </ul>
-{{/get}}
+</main>

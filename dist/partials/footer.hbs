@@ -1,0 +1,37 @@
+<footer class="footer-2" role="contentinfo">
+  <div class="footer-wrapper">
+
+    <ul>
+      <li class="copyright">
+        <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
+      </li>
+      <!-- <li><a href="javascript:void(0)">About</a></li> -->
+      <!-- <li><a href="javascript:void(0)">Contact</a></li> -->
+    </ul>
+
+    <div class="footer-secondary-links">
+      <ul>
+        <!-- <li><a href="javascript:void(0)">Terms and Conditions</a></li> -->
+        <!-- <li><a href="javascript:void(0)">Privacy Policy</a></li> -->
+      </ul>
+
+      <ul class="footer-social">
+        {{#if @blog.facebook}}
+          <li>
+            <a href="{{@blog.facebook}}">
+              <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
+            </a>
+          </li>
+        {{/if}}
+
+        {{#if @blog.twitter}}
+          <li>
+            <a href="javascript:void(0)">
+              <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="Twitter">
+            </a>
+          </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</footer>
