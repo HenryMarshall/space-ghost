@@ -32,9 +32,11 @@
       <h2>The Latest News</h2>
 
       {{#posts}}
-        <li>
-          <a href="{{url}}">{{title}}</a>
-        </li>
+        {{^has tag="project"}}
+          <li>
+            <a href="{{url}}">{{title}}</a>
+          </li>
+        {{/has}}
       {{/posts}}
 
       <a href="/page/2" class="btn">See More</a>
