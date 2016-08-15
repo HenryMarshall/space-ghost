@@ -7,7 +7,9 @@
 <main>
 
   <section class="home-section">
-    {{> featured-projects}}
+    {{#get "posts" filter="featured:true+tag:project" limit="3"}}
+      {{> featured-projects}}
+    {{/get}}
   </section>
 
   {{#get "posts" filter="tag:home+page:true"}}
