@@ -2,23 +2,4 @@
 
 <h1>All the projects</h1>
 
-{{#posts}}
-  <a href="/tag/{{slug}}"></a>
-  {{#if meta_title}}
-    <h3>{{meta_title}}</h3>
-  {{else}}
-    <h3>{{name}}</h3>
-  {{/if}}
-
-  <p>
-  {{description}}
-  </p>
-
-  {{#if image}}
-    <img src={{image}}/>
-  {{else}}
-    <div class="square-the-same-sized-as-the-image"></div>
-  {{/if}}
-
-  </a>
-{{/posts}}
+{{> project-cards}}

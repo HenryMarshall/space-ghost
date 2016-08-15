@@ -7,8 +7,12 @@
 <main>
 
   <section class="home-section">
+    <div class="line-behind-text">
+      <h6>Featured Projects</h6>
+    </div>
+
     {{#get "posts" filter="featured:true+tag:project" limit="3"}}
-      {{> featured-projects}}
+      {{> project-cards}}
     {{/get}}
   </section>
 
