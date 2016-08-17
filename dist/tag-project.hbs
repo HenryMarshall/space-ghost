@@ -1,10 +1,13 @@
 {{!< default}}
 
-
 <div id="projects">
   {{#tag}}
-    <h1>{{#if meta_title}}{{meta_title}}{{else}}Projects{{/if}}</h1>
-    <p>{{description}}</p>
+    <div class="refill-hero"{{#if image}} style="background: url({{image}})"{{/if}}>
+      <div class="hero-content">
+        <h1>{{#if meta_title}}{{meta_title}}{{else}}Projects{{/if}}</h1>
+        <p>{{description}}</p>
+      </div>
+    </div>
   {{/tag}}
 
   {{> project-cards}}
