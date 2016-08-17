@@ -50,12 +50,10 @@ picture {
 
 @mixin type-system-main() {
   h1,h2,h3,h4,h5,h6 {
-    font-family: "Open Sans", sans-serif;
     font-size: 40px;
   }
 
   p {
-    font-family: "Roboto Slab", serif;
     font-size: 20px;
   }
 }
