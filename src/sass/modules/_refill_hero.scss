@@ -20,6 +20,8 @@
   > .hero-content {
     max-width: 20em;
     text-align: center;
+    background-color: hsla(0, 0%, 100%, 0.60);
+    padding: 24px;
 
     @include media($large-screen) {
       text-align: left;
