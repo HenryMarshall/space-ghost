@@ -7,7 +7,13 @@
 <main>
 
   <section class="home-section">
-    {{> featured-projects}}
+    <div class="line-behind-text">
+      <h6>Featured Projects</h6>
+    </div>
+
+    {{#get "posts" filter="featured:true+tag:project" limit="3"}}
+      {{> project-cards}}
+    {{/get}}
   </section>
 
   {{#get "posts" filter="tag:home+page:true"}}
@@ -26,9 +32,11 @@
       <h2>The Latest News</h2>
 
       {{#posts}}
-        <li>
-          <a href="{{url}}">{{title}}</a>
-        </li>
+        {{^has tag="project"}}
+          <li>
+            <a href="{{url}}">{{title}}</a>
+          </li>
+        {{/has}}
       {{/posts}}
 
       <a href="/page/2" class="btn">See More</a>
