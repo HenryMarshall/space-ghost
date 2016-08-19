@@ -6,6 +6,15 @@
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
+{{#has tag="project"}}
+
+{{!-- For posts with the 'project' tag, redirect to the tag template --}}
+<script>
+  window.location = "/tag/{{slug}}"
+</script>
+
+{{else}}
+
 <main class="content" role="main">
   <article class="{{post_class}}">
 
@@ -86,5 +95,7 @@
   </a>
   {{/prev_post}}
 </aside>
+
+{{/has}}
 
 {{/post}}
