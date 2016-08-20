@@ -13,17 +13,9 @@
       <ul id="js-navigation-menu" class="navigation-menu show">
         {{#foreach navigation}}
           <li class="nav-link nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation">
-            <a href="{{url absolute="true"}}"><h2>{{label}}</h2></a>
+            <a href="{{url absolute="true"}}">{{label}}</a>
           </li>
         {{/foreach}}
-
-        <li class="nav-link" role="presentation">
-          {{#if @labs.subscribers}}
-            <a class="subscribe-button" href="{{@blog.url}}/subscribe/"><h2>Subscribe</h2></a>
-          {{else}}
-            <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/"><h2>Subscribe</h2></a>
-          {{/if}}
-        </li>
       </ul>
     </nav>
 
