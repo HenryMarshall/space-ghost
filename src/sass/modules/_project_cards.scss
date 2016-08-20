@@ -55,12 +55,15 @@
     transition: all 0.2s ease-in-out;
     color: $base-font-color;
 
-    &:hover {
-      text-decoration: underline;
-    }
-
     > h2 {
       margin: 0;
+      font-size: 1.4em;
+    }
+  }
+
+  &:hover {
+    h2 {
+      text-decoration: underline;
     }
   }
 
