@@ -6,40 +6,42 @@
 
 <main>
 
-  <section class="home-section">
-    <div class="line-behind-text">
-      <h6>Featured Projects</h6>
-    </div>
+  <section>
+    <div class="cards-wrapper">
+      <div class="line-behind-text">
+        <h6>Featured Projects</h6>
+      </div>
 
-    {{#get "posts" filter="featured:true+tag:project" limit="3"}}
-      {{> project-cards}}
-    {{/get}}
+      {{#get "posts" filter="featured:true+tag:project" limit="3"}}
+        {{> project-cards}}
+      {{/get}}
+    </div>
   </section>
 
   {{#get "posts" filter="tag:home+page:true"}}
     {{#foreach posts}}
       <section class="home-section"{{#if image}} style="background: image-url({{image}})"{{/if}}>
-        <div class="content">
-          <h2>{{title}}</h2>
-          <p>{{content}}</p>
-        </div>
+          <div class="wrapper">
+            <h2>{{title}}</h2>
+            <p>{{content}}</p>
+          </div>
       </section>
     {{/foreach}}
   {{/get}}
 
   <section class="home-section">
-    <div class="content">
+    <div class="wrapper">
       <h2>The Latest News</h2>
 
       {{#posts}}
         {{^has tag="project"}}
-          <li>
-            <a href="{{url}}">{{title}}</a>
-          </li>
-        {{/has}}
-      {{/posts}}
+        <li>
+          <a href="{{url}}">{{title}}</a>
+        </li>
+      {{/has}}
+    {{/posts}}
 
-      <a href="/page/2" class="btn">See More</a>
+    <a href="/page/2" class="btn">See More</a>
     </div>
   </section>
 

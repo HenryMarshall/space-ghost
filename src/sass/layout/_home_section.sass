@@ -1,19 +1,18 @@
-.home-section
+.home-template
 
-  > div
-    @include outer-container
-    padding: 40px 0
+  section
+    > .cards-wrapper, .wrapper
+      @include outer-container
 
-  > .content
-    @include type-system-main
-    padding: 40px 20px
+    > .wrapper
+      padding: 40px 18px
 
-    > h1
-      font-size: 40px
+    .btn
+      margin: 20px 0
 
-  .btn
-    margin: 20px 0
+  section:nth-child(even)
+    background-color: $alternating-background
 
-.home-section:nth-child(even)
-  background-color: $alternating-background
-  color: $alternating-foreground
+    p, h2
+      color: $alternating-foreground
+

@@ -1,21 +1,23 @@
 <footer class="footer-2" role="contentinfo">
   <div class="footer-wrapper">
 
-    <ul>
-      <li class="copyright">
-        <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
-      </li>
-      <!-- <li><a href="javascript:void(0)">About</a></li> -->
-      <!-- <li><a href="javascript:void(0)">Contact</a></li> -->
-    </ul>
+    <span class="copyright">
+      <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
+    </span>
 
     <div class="footer-secondary-links">
-      <ul>
-        <!-- <li><a href="javascript:void(0)">Terms and Conditions</a></li> -->
-        <!-- <li><a href="javascript:void(0)">Privacy Policy</a></li> -->
-      </ul>
-
       <ul class="footer-social">
+
+        {{!-- TODO: Restore RSS Subscriptions
+        <li class="nav-link" role="presentation">
+          {{#if @labs.subscribers}}
+            <a class="subscribe-button" href="{{@blog.url}}/subscribe/">Subscribe</a>
+          {{else}}
+            <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
+          {{/if}}
+        </li>
+        --}}
+
         {{#if @blog.facebook}}
           <li>
             <a href="{{@blog.facebook}}">

@@ -115,6 +115,8 @@ header.navigation {
     text-align: right;
     width: 100%;
     z-index: 9999;
+    font-family: $heading-font-family;
+    font-size: 1.2em;
 
     @include media ($horizontal-bar-mode) {
       background: transparent;
