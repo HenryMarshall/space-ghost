@@ -1,0 +1,39 @@
+<footer class="footer-2" role="contentinfo">
+  <div class="footer-wrapper">
+
+    <span class="copyright">
+      <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
+    </span>
+
+    <div class="footer-secondary-links">
+      <ul class="footer-social">
+
+        {{!-- TODO: Restore RSS Subscriptions
+        <li class="nav-link" role="presentation">
+          {{#if @labs.subscribers}}
+            <a class="subscribe-button" href="{{@blog.url}}/subscribe/">Subscribe</a>
+          {{else}}
+            <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
+          {{/if}}
+        </li>
+        --}}
+
+        {{#if @blog.facebook}}
+          <li>
+            <a href="{{@blog.facebook}}">
+              <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
+            </a>
+          </li>
+        {{/if}}
+
+        {{#if @blog.twitter}}
+          <li>
+            <a href="javascript:void(0)">
+              <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="Twitter">
+            </a>
+          </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</footer>

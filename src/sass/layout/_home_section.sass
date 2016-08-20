@@ -1,0 +1,18 @@
+.home-template
+
+  section
+    > .cards-wrapper, .wrapper
+      @include outer-container
+
+    > .wrapper
+      padding: 40px 18px
+
+    .btn
+      margin: 20px 0
+
+  section:nth-child(even)
+    background-color: $alternating-background
+
+    p, h2
+      color: $alternating-foreground
+
