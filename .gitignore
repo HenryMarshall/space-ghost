@@ -3,5 +3,5 @@ node_modules/
 .directory
 
 # temporary block of compiled assets
-dist/assets/js/index*
-dist/assets/css/main*
+# dist/assets/js/index*
+# dist/assets/css/main*
