@@ -14,14 +14,14 @@ gulp.task("sass", function() {
     .pipe(sass().on("error", sass.logError))
     .pipe(cssnano())
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest("dist/assets/css/"))
+    .pipe(gulp.dest("assets/css/"))
     .pipe(livereload())
 })
 
 gulp.task("babelify", function() {
   return (gulp.src("src/js/index.js"))
     .pipe(webpack(webpackConfig))
-    .pipe(gulp.dest("dist/assets/js/"))
+    .pipe(gulp.dest("assets/js/"))
     .pipe(livereload())
 })
 
