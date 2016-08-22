@@ -14,9 +14,13 @@ Live demo site coming soon.
 3. `git clone https://github.com/hbaughman/space-ghost`
 4. Restart Ghost (if running) -- command differs based on your setup
 5. Select the theme in Ghost's settings
-6. Turn on "Public API" in `Settings > Labs > Enable Beta Features`
-7. Add a link to `/tag/project` to your "Navigation" links
-   9) on `Settings > General`
+6. Turn on "Public API" and "Internal Tags" in `Settings > Labs > Enable Beta
+   Features` (If you don't see "Internal Tags" you probably have to upgrade to
+   Ghost 0.9.0).
+6. Create and publish a new Post
+  - Check "Turn this post into a static page"
+  - Set the "Post URL" (a.k.a. the slug) to `tags`
+7. Add a link to `/tags` in your "Navigation" links
 
 
 ### Disqus Comments
@@ -29,19 +33,21 @@ Live demo site coming soon.
 
 ### Projects
 
-Tags work as per normal in Space Ghost, but can **optionally** have an associated
-page which describes their function. This post will appear above the tagged
+Tags work as per normal in Space Ghost, but can *optionally* have an associated
+page which describes their function. This lets you post links, contact
+information and any number of pictures. This page will appear above the tagged
 posts when viewing the first page of the tag (e.g., on `/tag/family-history`,
 but not on `/tag/family-history/page/2`).
 
-Associated pages must follow certain conventions:
+To link a page to a tag you **must** enable the "Public API" and "Internal
+tags". The associated page must follow these rules exactly:
 
-- Have the tag "project"
-- Have the tag they are associated with (e.g., "family-history")
-- Have the "Post URL" (a.k.a. the slug) set to the same value as the tag (e.g.,
-  "family-history")
-- Check "Turn this post into a static page"
-- **Optional**: Check "Feature this post" to show it on the homepage (max 3)
+- Have the internal tag "#project" ([internal tags are identified by the leading
+  "#" symbol](http://support.ghost.org/internal-tags-beta/)).
+- Be tagged with the target tag (obviously).
+- Have "Turn this post into a static page" checked
+- **Optional**: Check "Feature this post" to show it on the homepage. I
+  recommend you limit yourself to three, though this is *not* enforced.
 
 You *must* enable "Public API" (see "Usage") for project pages to appear. 
 
