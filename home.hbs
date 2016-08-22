@@ -42,12 +42,10 @@
       <h2>The Latest News</h2>
 
       {{#posts}}
-        {{^has tag="project"}}
         <li>
           <a href="{{url}}">{{title}}</a>
         </li>
-      {{/has}}
-    {{/posts}}
+      {{/posts}}
 
     <a href="/page/2" class="btn">See More</a>
     </div>
