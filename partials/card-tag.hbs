@@ -1,0 +1,23 @@
+<div class="card">
+  <a href="{{url}}">
+
+    <div class="card-image">
+      <img alt="project picture" src=
+      "{{#if image}}
+        {{image}}
+      {{else}}
+        https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png
+      {{/if}}">
+    </div>
+
+    <div class="card-header">
+      <h2>{{name}}</h2>
+    </div>
+
+    {{#if description}}
+      <div class="card-copy">
+        <p>{{description}}</p>
+      </div>
+    {{/if}}
+  </a>
+</div>
