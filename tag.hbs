@@ -6,9 +6,11 @@
   <div class="wrapper">
     <section class="project-overview">
       {{!-- Using `slug="{{tag.name}}"` doesn't seem to work in Ghost 0.8.0 --}}
-      {{#get "posts" filter="slug:{{tag.name}}"}}
-        {{!-- Because slugs are unique there will only ever be one post --}}
-        {{#foreach posts}}
+      {{#get "posts" filter="page:true+tag:{{tag.name}}"}}
+        {{!-- Header when an associated page exists --}}
+        {{!-- Convention dictates you only ever have one static page per 
+              tag. Otherwise we can't know which will show up here. --}}
+        {{#foreach posts limit="1"}}
           <h1>{{title}}</h1>
 
           {{#if paged}}
@@ -21,8 +23,9 @@
             {{content}}
           {{/if}}
 
-        {{! Page for a non-project tag (e.g., NewYork or Node) }}
         {{/foreach}}
+
+      {{!-- Header when NO associated page exists --}}
       {{else}}
         {{#tag}}
           <h1>{{name}}</h1>
@@ -33,10 +36,12 @@
       {{/get}}
     </section>
 
-    <hr>
+    {{#if posts}}
+      <hr>
 
-    <h2>Latest News</h2>
-    {{> "loop"}}
+      <h2>Latest News</h2>
+      {{> "loop"}}
+    {{/if}}
   </div>
 </main>
 
