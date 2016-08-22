@@ -4,7 +4,7 @@
   "description": "Ghost theme for project portfolios and related blogs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp"
   },
   "keywords": [
     "ghost",

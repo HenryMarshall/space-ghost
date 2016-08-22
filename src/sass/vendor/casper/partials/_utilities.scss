@@ -2,7 +2,7 @@
    3. Utilities - These things get used a lot
    ========================================================================== */
 
-/* Clears shit */
+/* Clears stuff */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -17,7 +17,7 @@
   zoom: 1;
 }
 
-/* Hides shit */
+/* Hides stuff */
 .hidden {
   text-indent: -9999px;
   visibility: hidden;
@@ -27,8 +27,12 @@
 /* Creates a responsive wrapper that makes our content scale nicely */
 .inner {
   position: relative;
-  width: 80%;
   margin: 0 auto;
+  @include outer-container;
+
+  > .wrapper {
+    padding: 0 18px
+  }
 }
 
 /* Centres vertically yo. (IE8+) */

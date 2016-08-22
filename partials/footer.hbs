@@ -7,29 +7,32 @@
 
     <div class="footer-secondary-links">
       <ul class="footer-social">
-
-        {{!-- TODO: Restore RSS Subscriptions
-        <li class="nav-link" role="presentation">
-          {{#if @labs.subscribers}}
-            <a class="subscribe-button" href="{{@blog.url}}/subscribe/">Subscribe</a>
-          {{else}}
-            <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
-          {{/if}}
-        </li>
-        --}}
-
-        {{#if @blog.facebook}}
+        {{#if @blog.twitter}}
           <li>
-            <a href="{{@blog.facebook}}">
-              <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
+            <a href="{{twitter_url @blog.twitter}}">
+              <span class="icon icon-twitter"></span>
             </a>
           </li>
         {{/if}}
 
-        {{#if @blog.twitter}}
+        {{#if @blog.facebook}}
           <li>
-            <a href="javascript:void(0)">
-              <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="Twitter">
+            <a href="{{facebook_url @blog.facebook}}">
+              <span class="icon icon-facebook2"></span>
+            </a>
+          </li>
+        {{/if}}
+
+        <li>
+          <a href="{{@blog.url}}/rss/">
+            <span class="icon icon-rss2"></span>
+          </a>
+        </li>
+
+        {{#if @labs.subscribers}}
+          <li>
+            <a href="{{@blog.url}}/subscribe/">
+              <span class="icon icon-mail3"></span>
             </a>
           </li>
         {{/if}}
