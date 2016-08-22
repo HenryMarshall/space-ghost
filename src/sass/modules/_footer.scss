@@ -25,6 +25,7 @@
   
   .footer-wrapper {
     @include outer-container;
+    padding: 0 15px;
   }
 
   .footer-logo img {
