@@ -29,6 +29,10 @@
   position: relative;
   margin: 0 auto;
   @include outer-container;
+
+  > .wrapper {
+    padding: 0 18px
+  }
 }
 
 /* Centres vertically yo. (IE8+) */
