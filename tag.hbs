@@ -22,14 +22,14 @@
           {{/if}}
 
         {{! Page for a non-project tag (e.g., NewYork or Node) }}
-        {{else}}
-          {{#tag}}
-            <h1>{{name}}</h1>
-            {{#if description}}
-              <p>{{description}}</p>
-            {{/if}}
-          {{/tag}}
         {{/foreach}}
+      {{else}}
+        {{#tag}}
+          <h1>{{name}}</h1>
+          {{#if description}}
+            <p>{{description}}</p>
+          {{/if}}
+        {{/tag}}
       {{/get}}
     </section>
 
