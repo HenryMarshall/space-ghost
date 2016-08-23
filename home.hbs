@@ -12,8 +12,16 @@
         <h6>Featured Projects</h6>
       </div>
 
-      {{#get "posts" filter="featured:true+tag:project" limit="3"}}
-        {{> project-cards}}
+      {{#get "posts" filter="featured:true+page:true" limit="all" include="tags"}}
+        <div class="cards">
+          {{#foreach posts}}
+            {{#has tag="#project" limit="1"}}
+              {{#foreach tags}}
+                {{> card-tag}}
+              {{/foreach}}
+            {{/has}}
+          {{/foreach}}
+        </div>
       {{/get}}
     </div>
   </section>
@@ -34,12 +42,10 @@
       <h2>The Latest News</h2>
 
       {{#posts}}
-        {{^has tag="project"}}
         <li>
           <a href="{{url}}">{{title}}</a>
         </li>
-      {{/has}}
-    {{/posts}}
+      {{/posts}}
 
     <a href="/page/2" class="btn">See More</a>
     </div>
