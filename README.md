@@ -51,11 +51,6 @@ tags". The associated page must follow these rules exactly:
 
 You *must* enable "Public API" (see "Usage") for project pages to appear. 
 
-### Home Page
-
-To add colored blocks to the homepage (see the example site), create static
-pages with the tag "home". They will appear in reverse chronological order.
-
 
 ## Development
 1. Fork the `dev` branch

@@ -4,51 +4,29 @@
   <h2>{{@blog.description}}</h2>
 </div>
 
-<main>
+<main id="content" class="content inner" role="main">
 
   <section>
-    <div class="cards-wrapper">
-      <div class="line-behind-text">
-        <h6>Featured Projects</h6>
+    <div class="line-behind-text">
+      <h6>Featured Projects</h6>
+    </div>
+
+    {{#get "posts" filter="featured:true+page:true" limit="all" include="tags"}}
+      <div class="cards">
+        {{#foreach posts}}
+          {{#has tag="#project" limit="1"}}
+            {{#foreach tags}}
+              {{> card-tag}}
+            {{/foreach}}
+          {{/has}}
+        {{/foreach}}
       </div>
-
-      {{#get "posts" filter="featured:true+page:true" limit="all" include="tags"}}
-        <div class="cards">
-          {{#foreach posts}}
-            {{#has tag="#project" limit="1"}}
-              {{#foreach tags}}
-                {{> card-tag}}
-              {{/foreach}}
-            {{/has}}
-          {{/foreach}}
-        </div>
-      {{/get}}
-    </div>
+    {{/get}}
   </section>
 
-  {{#get "posts" filter="tag:home+page:true"}}
-    {{#foreach posts}}
-      <section class="home-section"{{#if image}} style="background: image-url({{image}})"{{/if}}>
-          <div class="wrapper">
-            <h2>{{title}}</h2>
-            <p>{{content}}</p>
-          </div>
-      </section>
-    {{/foreach}}
-  {{/get}}
-
-  <section class="home-section">
-    <div class="wrapper">
-      <h2>The Latest News</h2>
-
-      {{#posts}}
-        <li>
-          <a href="{{url}}">{{title}}</a>
-        </li>
-      {{/posts}}
-
-    <a href="/page/2" class="btn">See More</a>
-    </div>
-  </section>
+  <div class="wrapper">
+    {{!-- The tag below includes the post loop - partials/loop.hbs --}}
+    {{> "loop"}}
+  </div>
 
 </main>

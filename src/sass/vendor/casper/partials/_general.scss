@@ -307,9 +307,14 @@ body:not(.post-template) .post-title {
   font-size: 3.6rem;
 }
 
-.post-title a {
-  text-decoration: none;
+.post-title {
+  margin-bottom: 0;
+
+  a {
+    text-decoration: none;
+  }
 }
+
 
 /* removed section tag, so it must be used without p */
 .post-excerpt {
@@ -324,7 +329,7 @@ body:not(.post-template) .post-title {
 
 .post-meta {
   display: block;
-  margin: 1.75rem 0 0 0;
+  margin: 0 0 1.75rem 0;
   font-family: "Open Sans", sans-serif;
   font-size: 1.5rem;
   line-height: 2.2rem;
