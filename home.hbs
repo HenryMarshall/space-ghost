@@ -1,7 +1,14 @@
 {{!< default }}
 
 <div class="hero"{{#if @blog.cover}} style="background-image: url({{@blog.cover}})"{{/if}}>
-  <h2>{{@blog.description}}</h2>
+  <div class="hero-text">
+    {{#if @blog.logo}}
+      <img src="{{@blog.logo}}" alt="{{@blog.title}}">
+    {{else}}
+      <h1>{{@blog.title}}</h1>
+    {{/if}}
+    <h2>{{@blog.description}}</h2>
+  </div>
 </div>
 
 <main id="content" class="content inner" role="main">
