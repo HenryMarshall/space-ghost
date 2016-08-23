@@ -1,19 +1,19 @@
-var webpack = require('webpack')
+var webpack = require("webpack")
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: "source-map",
 
-  entry: './src/js/index.js',
+  entry: "./src/js/index.js",
   output: {
-    filename: 'index.js'
+    filename: "index.js"
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         query: {
-          presets: ['es2015']
+          presets: ["es2015"]
         }
       }
     ]

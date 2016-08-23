@@ -1,0 +1,47 @@
+{{!< default}}
+{{!-- The tag above means: insert everything below into debault.hbs --}}
+
+<main class="content inner tag-page" role="main">
+
+  <div class="wrapper">
+    <section class="project-overview">
+      {{!-- Using `slug="{{tag.name}}"` doesn't seem to work in Ghost 0.8.0 --}}
+      {{#get "posts" filter="page:true+tag:{{tag.name}}"}}
+        {{!-- Header when an associated page exists --}}
+        {{!-- Convention dictates you only ever have one static page per 
+              tag. Otherwise we can't know which will show up here. --}}
+        {{#foreach posts limit="1"}}
+          <h1>{{title}}</h1>
+
+          {{#if paged}}
+            {{#if meta_description}}
+              {{meta_description}}
+            {{else}}
+              {{content words="50"}}
+            {{/if}}
+          {{else}}
+            {{content}}
+          {{/if}}
+
+        {{/foreach}}
+
+      {{!-- Header when NO associated page exists --}}
+      {{else}}
+        {{#tag}}
+          <h1>{{name}}</h1>
+          {{#if description}}
+            <p>{{description}}</p>
+          {{/if}}
+        {{/tag}}
+      {{/get}}
+    </section>
+
+    {{#if posts}}
+      <hr>
+
+      <h2>Latest News</h2>
+      {{> "loop"}}
+    {{/if}}
+  </div>
+</main>
+

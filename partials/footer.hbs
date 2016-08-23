@@ -1,0 +1,42 @@
+<footer class="footer-2" role="contentinfo">
+  <div class="footer-wrapper">
+
+    <span class="copyright">
+      <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
+    </span>
+
+    <div class="footer-secondary-links">
+      <ul class="footer-social">
+        {{#if @blog.twitter}}
+          <li>
+            <a href="{{twitter_url @blog.twitter}}">
+              <span class="icon icon-twitter"></span>
+            </a>
+          </li>
+        {{/if}}
+
+        {{#if @blog.facebook}}
+          <li>
+            <a href="{{facebook_url @blog.facebook}}">
+              <span class="icon icon-facebook2"></span>
+            </a>
+          </li>
+        {{/if}}
+
+        <li>
+          <a href="{{@blog.url}}/rss/">
+            <span class="icon icon-rss2"></span>
+          </a>
+        </li>
+
+        {{#if @labs.subscribers}}
+          <li>
+            <a href="{{@blog.url}}/subscribe/">
+              <span class="icon icon-mail3"></span>
+            </a>
+          </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</footer>
