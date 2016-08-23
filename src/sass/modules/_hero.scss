@@ -8,20 +8,20 @@
   color: #fff;
   background: rgb(0, 153, 204) no-repeat center center;
   background-size: cover;
+}
 
-  .hero-text {
-    background: rgb(0,0,0); // fallback color
-    background: rgba(0,0,0,0.7);
-    padding: 10px;
-    max-width: 60%;
-    margin: 60vh auto 0 auto;
+.hero-text {
+  background: rgb(0,0,0); // fallback color
+  background: rgba(0,0,0,0.7);
+  padding: 10px;
+  max-width: 60%;
+  margin: 60vh auto 0 auto;
 
-    > h1, > h2 {
-      color: $light-gray;
-    }
+  > h1, > h2 {
+    color: $light-gray;
+  }
 
-    > h2 {
-      font-size: 1.5em;
-    }
+  > h2 {
+    font-size: 1.5em;
   }
 }
