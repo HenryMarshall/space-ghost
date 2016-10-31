@@ -1,6 +1,7 @@
 var gulp = require("gulp")
 var sourcemaps = require("gulp-sourcemaps")
 var livereload = require("gulp-livereload")
+var autoprefixer = require("gulp-autoprefixer")
 
 var cssnano = require("gulp-cssnano")
 var sass = require("gulp-sass")
@@ -12,6 +13,7 @@ gulp.task("sass", function() {
   return gulp.src("src/sass/main.+(sass|scss)")
     .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
+    .pipe(autoprefixer({ browsers: ["> 1%"] }))
     .pipe(cssnano())
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("assets/css/"))
