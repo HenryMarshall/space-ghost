@@ -5,7 +5,7 @@ hero taking up nearly the entire viewport and three tags on the homepage
 immediately below the fold. All tags (including these featured ones) can have an
 associated page which will appear above the tagged posts.
 
-Live demo site coming soon.
+Check out my [personal site](http://henrymarshall.xyz/) for a live demo.
 
 
 ## Usage

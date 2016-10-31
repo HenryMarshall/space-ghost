@@ -236,7 +236,7 @@
   font-size: 2rem;
   line-height: 1.5em;
   font-weight: 400;
-  font-family: "Merriweather", serif;
+  font-family: $base-font-family;
   letter-spacing: 0.01rem;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -319,7 +319,7 @@ body:not(.post-template) .post-title {
 /* removed section tag, so it must be used without p */
 .post-excerpt {
   margin: 0;
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 1.7em;
 }
 
